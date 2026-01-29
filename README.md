@@ -17,15 +17,15 @@ Reducing the delay values is not recommended. Doing so may be interpreted as spa
 
 ## Setup Instructions
 
-### Step 1 — Install Psiphon
+### Step 1 — Install Psiphon3
 
-Install Psiphon3 on your Linux device by running the following commands in the terminal in order:
+Install Psiphon3 on your Linux device by running the following commands in order:
 
 `wget https://raw.githubusercontent.com/SpherionOS/PsiphonLinux/main/plinstaller2`  
 `sudo sh plinstaller2`  
 `sudo rm -rf plinstaller2`
 
-Alternatively, you can follow the manual installation instructions provided here:  
+Alternatively, you can follow the manual installation instructions here:  
 https://github.com/SpherionOS/PsiphonLinux
 
 ---
@@ -40,7 +40,7 @@ Open a terminal and create a new Bash script file:
 
 ### Step 3 — Add the script
 
-Paste the Psiphon automation Bash script into the file, then save and exit.
+Paste the content of the provided PsiAuto.sh Bash script into the file, then save and exit.
 
 ---
 
@@ -55,16 +55,19 @@ Make the script executable and run it with elevated privileges:
 
 ## Setting up a system proxy
 
-Once you see the message **✅ Connection successful** in your terminal, Psiphon3 is ready to use with the following **default proxy settings**:
+Once you see the message "**✅ Connection successful**" in your terminal, Psiphon3 is ready to be used with the following **default proxy settings**:
 
 HTTP: 127.0.0.1:8081  
 HTTPS: 127.0.0.1:8081  
 SOCKS4/5: 127.0.0.1:1081  
 
-You can route traffic through Psiphon by configuring:
-- Browser proxy settings
-- CLI tools (using `export` / `unset` commands)
-- System-wide proxy settings
+You can route traffic through Psiphon by configuring:  
+- Browser proxy settings  
+- CLI tools (using `export` / `unset` commands)  
+- System-wide proxy settings  
+
+⚠️ Side note:  
+Changing the Psiphon Upstream Proxy Settings may interfere with the automation script. To use a custom upstream proxy, update the Proxy URL in the script at line 12.
 
 ---
 
